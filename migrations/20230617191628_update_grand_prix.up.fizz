@@ -1,0 +1,2 @@
+rename_table("GRAND_PRIX", "RACE")
+rename_column("PLACE", "GRANDPRIX_ID", "RACE_ID")

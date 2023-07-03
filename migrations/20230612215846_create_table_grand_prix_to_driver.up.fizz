@@ -1,0 +1,7 @@
+create_table("GRAND_PRIX_TO_DRIVER") {
+    t.Column("ID", "integer", {primary: true})
+    t.Column("GRANDPRIX_ID", "integer", {})
+    t.Column("DRIVER_ID", "integer", {})
+    t.ForeignKey("GRANDPRIX_ID", {"GRAND_PRIX": ["ID"]}, {"on_delete": "cascade"})
+    t.ForeignKey("DRIVER_ID", {"DRIVER": ["ID"]}, {"on_delete": "cascade"})
+}

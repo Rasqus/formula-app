@@ -1,0 +1,6 @@
+create_table("TEAM") {
+    t.Column("ID", "integer", {primary: true})
+    t.Column("NAME", "string", {})
+    t.Column("DETAILS", "string", {"size": 300, "null": true})
+    t.Column("COUNTRY", "string", {})
+}

@@ -1,0 +1,1 @@
+drop_table("SEASON_TO_TEAM")

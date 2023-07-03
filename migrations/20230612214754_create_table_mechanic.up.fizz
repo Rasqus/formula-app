@@ -1,0 +1,5 @@
+create_table("MECHANIC") {
+    t.Column("ID", "integer", {primary: true})
+    t.Column("NAME", "string", {})
+    t.Column("SURNAME", "string", {})
+}

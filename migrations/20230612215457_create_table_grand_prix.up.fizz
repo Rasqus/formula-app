@@ -1,0 +1,9 @@
+create_table("GRAND_PRIX") {
+    t.Column("ID", "integer", {primary: true})
+    t.Column("NAME", "string", {})
+    t.Column("DETAILS", "string", {"size": 300, "null": true})
+    t.Column("SEASON_ID", "integer", {})
+    t.Column("TRACK_ID", "integer", {})
+    t.ForeignKey("SEASON_ID", {"SEASON": ["ID"]}, {"on_delete": "cascade"})
+    t.ForeignKey("TRACK_ID", {"TRACK": ["ID"]}, {"on_delete": "cascade"})
+}

@@ -1,0 +1,1 @@
+add_column("GRAND_PRIX_TO_DRIVER", "PLACE", "integer", {})

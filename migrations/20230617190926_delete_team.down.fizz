@@ -1,0 +1,35 @@
+create_table("TEAM") {
+    t.Column("ID", "integer", {primary: true})
+    t.Column("NAME", "string", {})
+    t.Column("DETAILS", "string", {"size": 300, "null": true})
+    t.Column("COUNTRY", "string", {})
+}
+
+create_table("SEASON_TO_TEAM") {
+    t.Column("ID", "integer", {primary: true})
+    t.Column("PLACE", "integer", {})
+    t.Column("SEASON_ID", "integer", {})
+    t.Column("TEAM_ID", "integer", {})
+    t.ForeignKey("SEASON_ID", {"SEASON": ["ID"]}, {"on_delete": "cascade"})
+    t.ForeignKey("TEAM_ID", {"TEAM": ["ID"]}, {"on_delete": "cascade"})
+}
+
+create_table("TEAM_TO_DRIVER") {
+    t.Column("ID", "integer", {primary: true})
+    t.Column("TEAM_ID", "integer", {})
+    t.Column("DRIVER_ID", "integer", {})
+    t.ForeignKey("TEAM_ID", {"TEAM": ["ID"]}, {"on_delete": "cascade"})
+    t.ForeignKey("DRIVER_ID", {"DRIVER": ["ID"]}, {"on_delete": "cascade"})
+}
+
+create_table("MECHANIC") {
+    t.Column("ID", "integer", {primary: true})
+    t.Column("NAME", "string", {})
+    t.Column("SURNAME", "string", {})
+}
+
+add_column("MECHANIC", "TEAM_ID", "integer", {})
+add_foreign_key("MECHANIC", "TEAM_ID", {"TEAM": ["ID"]}, {
+    "name": "MECHANIC_FK",
+    "on_delete": "cascade",
+})

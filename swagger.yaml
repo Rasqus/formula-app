@@ -1,0 +1,413 @@
+basePath: /
+definitions:
+    DeleteResponse:
+        properties:
+            message:
+                description: |-
+                    Message about data
+                    in: string
+                type: string
+                x-go-name: Message
+        type: object
+        x-go-package: github.com/anras5/formula-app-backend/internal/config
+    Driver:
+        properties:
+            country:
+                description: |-
+                    Country of the Driver
+                    in: string
+                type: string
+                x-go-name: Country
+            id:
+                description: |-
+                    ID of the Driver
+                    in: int64
+                format: int64
+                type: integer
+                x-go-name: ID
+            name:
+                description: |-
+                    Name of the Driver
+                    in: string
+                type: string
+                x-go-name: Name
+            places:
+                items:
+                    $ref: '#/definitions/Place'
+                type: array
+                x-go-name: Places
+            start_number:
+                description: |-
+                    StartNumber of the Driver
+                    in: int64
+                format: int64
+                type: integer
+                x-go-name: StartNumber
+            surname:
+                description: |-
+                    Surname of the Driver
+                    in: string
+                type: string
+                x-go-name: Surname
+            team:
+                description: |-
+                    Team of the Driver
+                    in: string
+                type: string
+                x-go-name: Team
+        type: object
+        x-go-package: github.com/anras5/formula-app-backend/internal/models
+    JSONResponse:
+        properties:
+            data:
+                description: |-
+                    Data of the error
+                    in: interface
+                x-go-name: Data
+            error:
+                description: |-
+                    Status of the error
+                    in: bool
+                type: boolean
+                x-go-name: Error
+            message:
+                description: |-
+                    Message of the error
+                    in: string
+                type: string
+                x-go-name: Message
+        type: object
+        x-go-package: github.com/anras5/formula-app-backend/internal/config
+    Place:
+        properties:
+            driver_id:
+                format: int64
+                type: integer
+                x-go-name: DriverID
+            id:
+                description: |-
+                    ID of the Place
+                    in: int64
+                format: int64
+                type: integer
+                x-go-name: ID
+            place:
+                description: |-
+                    Place of the Driver in a Race
+                    in: int64
+                format: int64
+                type: integer
+                x-go-name: Place
+            race_id:
+                format: int64
+                type: integer
+                x-go-name: RaceID
+        type: object
+        x-go-package: github.com/anras5/formula-app-backend/internal/models
+    PostDriverRequest:
+        properties:
+            country:
+                description: |-
+                    Country of the Driver
+                    in: string
+                type: string
+                x-go-name: Country
+            name:
+                description: |-
+                    Name of the Driver
+                    in: string
+                type: string
+                x-go-name: Name
+            start_number:
+                description: |-
+                    StartNumber of the Driver
+                    in: int64
+                format: int64
+                type: integer
+                x-go-name: StartNumber
+            surname:
+                description: |-
+                    Surname of the Driver
+                    in: string
+                type: string
+                x-go-name: Surname
+            team:
+                description: |-
+                    Team of the Driver
+                    in: string
+                type: string
+                x-go-name: Team
+        type: object
+        x-go-package: github.com/anras5/formula-app-backend/internal/config
+    PostResponse:
+        properties:
+            driver:
+                $ref: '#/definitions/Driver'
+            message:
+                description: |-
+                    Message about data
+                    in: string
+                type: string
+                x-go-name: Message
+        type: object
+        x-go-name: PostDriverResponse
+        x-go-package: github.com/anras5/formula-app-backend/internal/config
+    PutDriverRequest:
+        properties:
+            country:
+                description: |-
+                    Country of the Driver
+                    in: string
+                type: string
+                x-go-name: Country
+            id:
+                description: |-
+                    ID of the Driver
+                    in: int64
+                format: int64
+                type: integer
+                x-go-name: ID
+            name:
+                description: |-
+                    Name of the Driver
+                    in: string
+                type: string
+                x-go-name: Name
+            start_number:
+                description: |-
+                    StartNumber of the Driver
+                    in: int64
+                format: int64
+                type: integer
+                x-go-name: StartNumber
+            surname:
+                description: |-
+                    Surname of the Driver
+                    in: string
+                type: string
+                x-go-name: Surname
+            team:
+                description: |-
+                    Team of the Driver
+                    in: string
+                type: string
+                x-go-name: Team
+        type: object
+        x-go-package: github.com/anras5/formula-app-backend/internal/config
+    PutResponse:
+        properties:
+            message:
+                description: |-
+                    Message about data
+                    in: string
+                type: string
+                x-go-name: Message
+        type: object
+        x-go-package: github.com/anras5/formula-app-backend/internal/config
+    Race:
+        properties:
+            details:
+                description: |-
+                    Details of the Race
+                    in: string
+                type: string
+                x-go-name: Details
+            id:
+                description: |-
+                    ID of the Race
+                    in: int64
+                format: int64
+                type: integer
+                x-go-name: ID
+            name:
+                description: |-
+                    Name of the Race
+                    in: string
+                type: string
+                x-go-name: Name
+            places:
+                items:
+                    $ref: '#/definitions/Place'
+                type: array
+                x-go-name: Places
+            season_id:
+                format: int64
+                type: integer
+                x-go-name: SeasonID
+            track_id:
+                format: int64
+                type: integer
+                x-go-name: TrackID
+        type: object
+        x-go-package: github.com/anras5/formula-app-backend/internal/models
+    Season:
+        properties:
+            id:
+                description: |-
+                    ID of the Season
+                    in: int64
+                format: int64
+                type: integer
+                x-go-name: ID
+            races:
+                items:
+                    $ref: '#/definitions/Race'
+                type: array
+                x-go-name: Races
+            year:
+                description: |-
+                    Year of the Season
+                    in: int64
+                format: int64
+                type: integer
+                x-go-name: Year
+        type: object
+        x-go-package: github.com/anras5/formula-app-backend/internal/models
+    Track:
+        properties:
+            city:
+                description: |-
+                    City of the Track
+                    in: string
+                type: string
+                x-go-name: City
+            country:
+                description: |-
+                    Country of the Track
+                    in: string
+                type: string
+                x-go-name: Country
+            details:
+                description: |-
+                    Details of the Track
+                    in: string
+                type: string
+                x-go-name: Details
+            id:
+                description: |-
+                    ID of the Track
+                    in: int64
+                format: int64
+                type: integer
+                x-go-name: ID
+            length:
+                description: |-
+                    Length of the Track
+                    in: int64
+                format: int64
+                type: integer
+                x-go-name: Length
+            name:
+                description: |-
+                    Name of the Track
+                    in: string
+                type: string
+                x-go-name: Name
+            races:
+                items:
+                    $ref: '#/definitions/Race'
+                type: array
+                x-go-name: Races
+        type: object
+        x-go-package: github.com/anras5/formula-app-backend/internal/models
+host: localhost:8080
+info:
+    title: 'Formula 1 Api:'
+    version: 0.0.1
+paths:
+    /drivers:
+        post:
+            description: Insert driver
+            operationId: PostDriverRequestBody
+            parameters:
+                - description: 'name: driver'
+                  in: body
+                  name: body
+                  required: true
+                  schema:
+                    $ref: '#/definitions/PostDriverRequest'
+                  x-go-name: Body
+            responses:
+                "202":
+                    description: PostResponse
+                    schema:
+                        $ref: '#/definitions/PostResponse'
+                "400":
+                    description: JSONResponse
+                    schema:
+                        $ref: '#/definitions/JSONResponse'
+            tags:
+                - driver
+        put:
+            description: Update driver
+            operationId: PutDriverRequestBody
+            parameters:
+                - description: 'name: driver'
+                  in: body
+                  name: body
+                  required: true
+                  schema:
+                    $ref: '#/definitions/PutDriverRequest'
+                  x-go-name: Body
+            responses:
+                "202":
+                    description: PutResponse
+                    schema:
+                        $ref: '#/definitions/PutResponse'
+                "400":
+                    description: JSONResponse
+                    schema:
+                        $ref: '#/definitions/JSONResponse'
+            tags:
+                - driver
+    /drivers/{id}:
+        delete:
+            description: Delete driver by id
+            operationId: DeleteRequest
+            parameters:
+                - description: ID of an item
+                  format: int64
+                  in: path
+                  name: id
+                  required: true
+                  type: integer
+                  x-go-name: ID
+            responses:
+                "202":
+                    description: DeleteResponse
+                    schema:
+                        $ref: '#/definitions/DeleteResponse'
+                "400":
+                    description: JSONResponse
+                    schema:
+                        $ref: '#/definitions/JSONResponse'
+            tags:
+                - driver
+        get:
+            description: Get driver by id
+            operationId: GetRequest
+            parameters:
+                - description: ID of an item
+                  format: int64
+                  in: path
+                  name: id
+                  required: true
+                  type: integer
+                  x-go-name: ID
+            responses:
+                "200":
+                    description: Driver
+                    schema:
+                        $ref: '#/definitions/Driver'
+                "400":
+                    description: JSONResponse
+                    schema:
+                        $ref: '#/definitions/JSONResponse'
+            tags:
+                - driver
+produces:
+    - application/json
+schemes:
+    - http
+    - https
+swagger: "2.0"

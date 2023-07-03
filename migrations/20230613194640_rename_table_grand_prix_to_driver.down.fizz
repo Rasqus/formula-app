@@ -1,0 +1,1 @@
+rename_table("PLACE", "GRAND_PRIX_TO_DRIVER")

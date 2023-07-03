@@ -1,0 +1,8 @@
+create_table("SEASON_TO_TEAM") {
+    t.Column("ID", "integer", {primary: true})
+    t.Column("PLACE", "integer", {})
+    t.Column("SEASON_ID", "integer", {})
+    t.Column("TEAM_ID", "integer", {})
+    t.ForeignKey("SEASON_ID", {"SEASON": ["ID"]}, {"on_delete": "cascade"})
+    t.ForeignKey("TEAM_ID", {"TEAM": ["ID"]}, {"on_delete": "cascade"})
+}

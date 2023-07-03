@@ -1,0 +1,1 @@
+drop_table("TEAM_TO_DRIVER")

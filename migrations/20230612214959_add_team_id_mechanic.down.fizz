@@ -1,0 +1,2 @@
+drop_foreign_key("MECHANIC", "MECHANIC_FK", {"if_exists": true})
+drop_column("MECHANIC", "TEAM_ID")

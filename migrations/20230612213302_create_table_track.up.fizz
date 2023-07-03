@@ -1,0 +1,8 @@
+create_table("TRACK") {
+    t.Column("ID", "integer", {primary: true})
+    t.Column("NAME", "string", {})
+    t.Column("DETAILS", "string", {"size": 300})
+    t.Column("COUNTRY", "string", {})
+    t.Column("CITY", "string", {})
+    t.Column("LENGTH", "integer", {})
+}

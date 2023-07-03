@@ -1,0 +1,4 @@
+create_table("SEASON") {
+    t.Column("ID", "integer", {"primary": true})
+    t.Column("YEAR", "integer", {})
+}

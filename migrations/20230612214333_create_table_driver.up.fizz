@@ -1,0 +1,7 @@
+create_table("DRIVER") {
+    t.Column("ID", "integer", {primary: true})
+    t.Column("NAME", "string", {})
+    t.Column("SURNAME", "string", {})
+    t.Column("COUNTRY", "string", {})
+    t.Column("START_NUMBER", "integer", {})
+}

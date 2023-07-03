@@ -1,0 +1,5 @@
+add_column("MECHANIC", "TEAM_ID", "integer", {})
+add_foreign_key("MECHANIC", "TEAM_ID", {"TEAM": ["ID"]}, {
+    "name": "MECHANIC_FK",
+    "on_delete": "cascade",
+})
